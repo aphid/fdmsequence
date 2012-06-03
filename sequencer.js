@@ -10,7 +10,7 @@ for now sequence will always start with the first element in the file.
 var current = {};
 current.id = rnd(groupdata);
 current.type = "Intro";
-var topmediadir = "http://localhost/~aphid/sequence_videos/"; //relative or absolute
+var topmediadir = "http://metaviddemo01.ucsc.edu/sequence_videos/"; //relative or absolute
 $(document).ready(function() {
     var id = current.id;
 	createVideo(id);
