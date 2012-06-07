@@ -27,8 +27,7 @@ function createVideo(id){
     var type = current.type;
     $('#course').text("Course: " + video.title);
     $('#description').text("Instructor: " + video.instructor);
-    //create video element for first item in course (intro)
-    var vtag = $('<video/>', {id: id, autoplay: false});
+    var vtag = $('<video/>', {id: id, autoplay: false, controls: true});
     var path = topmediadir + video.code + "/" + type + "/";
     var fname = video[type][rnd(video[type])] + "";
     $("<source/>", { src: path + fname +  ".mp4" }).appendTo(vtag);
