@@ -33,10 +33,11 @@ function createVideo(id){
     $('#course').text("Course: " + video.title);
     $('#description').text("Instructor: " + video.instructor);
     //create video element for first item in course (intro)
-    var vtag = $('<video/>', {id: id, autoplay: false controls: true});
+    var vtag = $('<video/>', {id: id, autoplay: false, controls: true});
     var path = topmediadir + video.code + "/" + type + "/";
     var fname = video[type][rnd(video[type])] + "";
     //create sources (mp4/webm) for video tag
+    console.log("Loading " + path + fname);
     $("<source/>", { src: path + fname +  ".mp4" }).appendTo(vtag);
     $("<source/>", { src: path + fname + ".webm" }).appendTo(vtag);
     //make it go    
@@ -59,8 +60,7 @@ function setupVideo(id){
 	var video = sequence.clips[id];
 	var pvid = Popcorn("#" + id);
     getNext(id, current.type);
-    console.log(current.type);
-
+    
     //if video has start/endtimes defined, use them, otherwise use whole video
 	if (video.start) {
 		pvid.currentTime(video.start);	
@@ -101,7 +101,6 @@ function getNext(id, type){
         current.id = rnd(groupdata);
         current.type = 'Intro';
     }
-    console.log(current.id + " " + current.type);
     
 }
 
