@@ -52,6 +52,7 @@ var groupdata =
 
     ];
     
+//optional system of per-clip connection, not currently used
 var sequence = {
     "clips": [{
         "id": 'gustavo_intro',
